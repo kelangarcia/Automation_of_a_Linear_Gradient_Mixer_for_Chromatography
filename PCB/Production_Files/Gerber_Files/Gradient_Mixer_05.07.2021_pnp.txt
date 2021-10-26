@@ -1,0 +1,49 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=Gradient_Mixer_05.07.2021
+*Date=10:12:54
+*CreatedBy=Fritzing 0.8.7b.01.24.1bf5
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;;9.90432;-12.668;0;Bottom;Via18
+2;;rf-link_tx;2.28798;-51.8727;180;Bottom;Antenna
+3;1k;THT;73.408;-22.8532;0;Bottom;R6
+4;;;25.1224;-33.002;0;Bottom;Via12
+5;;little_bits_female;6.37799;-40.7083;-90;Top;Play Button
+6;1k;THT;35.308;-33.0132;0;Bottom;R2
+7;;;9.89354;-27.9415;0;Bottom;Via11
+8;;little_bits_female;6.37797;-7.68821;-90;Top;12V INPUT
+9;;;87.0762;-35.511;0;Bottom;Via25
+10;;;40.3671;-38.053;0;Bottom;Via5
+11;;;30.2774;-43.1575;0;Bottom;Via8
+12;;;78.4944;-12.7129;0;Bottom;Via20
+13;;;60.6946;-12.7129;0;Bottom;Via22
+14;;;9.90432;-5.08787;0;Bottom;Via17
+15;;diode-1n4001;48.008;-43.1732;90;Bottom;D1
+16;;;9.89038;-33.0015;0;Bottom;Via10
+17;100;THT;35.308;-22.8532;180;Bottom;R7
+18;;;60.722;-7.64102;0;Bottom;Via21
+19;;;89.9122;-35.4613;0;Bottom;Via24
+20;;;86.0929;-15.2111;0;Bottom;Via13
+21;1k;THT;53.088;-33.0132;0;Bottom;R5
+22;;;58.2103;-26.6632;0;Bottom;Arduino Mega
+23;;little_bits_female;6.37799;-17.8482;-90;Top;Stop Button
+24;;;78.4879;-7.60298;0;Bottom;Via19
+25;;little_bits_male;6.41758;-30.3983;-90;Top;LED
+26;;;32.7448;-30.4871;0;Bottom;Via14
+27;;;15.0084;-20.3347;0;Bottom;Via16
+28;;little_bits_male;17.603;-6.66283;180;Top;Solenoid Valve OUTPUT
+29;;;9.90528;-38.1015;0;Bottom;Via9
+30;;;32.7469;-48.2477;0;Bottom;Via6
+31;;TO92 [THT];60.6191;-30.6637;90;Bottom;Q1
+32;1k;THT;35.308;-15.2332;0;Bottom;R1
+33;;diode-1n4001;73.408;-17.7732;0;Bottom;D2
+34;;;15.0084;-7.62395;0;Bottom;Via15
