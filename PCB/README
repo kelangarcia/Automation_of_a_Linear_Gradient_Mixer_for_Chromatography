@@ -7,4 +7,4 @@ For PCB production, normaly gerber files are used. Just download all the gerber 
 If you want to modify the PCB design, the file is also included with the name "Gradient_Mixer_05.07.2021.fzz" to edit this file you need the so software fritzing.
 
 when the pcb is ready, you need to solder all the components into the PCB, the circuit diagram showing which components to solder exactly where is on the pdf with the name
-"Circuit_Diagram.pdf"
+"Circuit_Diagram.pdf" on the folder name "Circuit"
