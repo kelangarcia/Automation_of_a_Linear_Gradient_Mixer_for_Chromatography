@@ -1,0 +1,7 @@
+PCB files in different format
+
+The export files of the PCB are in the folder "Production_Files". In there all files are given in the most important formats.
+In .pdf, .svg, and the most important in gerber file.
+For production, normaly the gerber file is used.Just download all the gerber files, zip it and send it to the production company.
+
+If you want to modify the PCB design, the file is also included with the name "Gradient_Mixer_05.07.2021.fzz" to edit this file you need the so software fritzing.
