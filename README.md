@@ -4,7 +4,7 @@ This repository has all the files and documentation (3D Case, Code, Circuit Anal
 
 All the folders and files included are explained below:
 
-- "Automation of Gradient Mixer for Chromatography.pdf": Technical explanation of machine design, circuit, code, etc...
+- "Automation of Gradient Mixer for Chromatography.pdf": Technical motivation and explanation of the machine. It explains why and how the final design, circuit, code, etc... works.
 
 - "3D Case": This folder includes the 3D files exported into .stl (This is the format used for 3D printing). Just upload this file to a 3D printer or sent it to a production company.
 
