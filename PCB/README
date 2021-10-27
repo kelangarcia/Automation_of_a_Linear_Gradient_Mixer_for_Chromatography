@@ -5,7 +5,7 @@ In .pdf, .svg, and gerber file (the most important).
 For PCB production, normaly gerber files are used. Just download all the gerber files, zip them together to one file and send it to the production company.
 (Or just send the .zip file included with the name "KGGradient_Mixer_06072021.zip" which is located on the folder "Production File", which is a zip file containing the gerber files)
 
-If you want to modify the PCB design, the file is also included with the name "Gradient_Mixer_05.07.2021.fzz" to edit this file you need the so software fritzing.
+If you want to modify the PCB design, the file is also included with the name "Gradient_Mixer_05.07.2021.fzz" to edit this file you need the software fritzing.
 
 When the pcb is ready, you need to solder all the components into the PCB, the circuit diagram showing which components to solder exactly where is on the pdf with the name
 "Circuit_Diagram.pdf" on the folder name "Circuit"
