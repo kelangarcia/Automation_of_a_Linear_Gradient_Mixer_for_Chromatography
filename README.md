@@ -12,7 +12,7 @@ All the folders and files included are explained below:
 
 - "Code": This folder includes three important files. Two gradient mixer codes and a zip file with the needed libraries. The zip file needs to be installed into your Arduino IDE (read the instruction set for more), once it is installed. You can upload one of the two Gradient Mixer code provided. First try with the original code and test the machine. If you notice that when there is a press in the touch screen it detects the touch but in the inverted y-axis position, then upload the second code (LCD inverted code).
 
-- "Instruction Sets": Two .pdfs files, one is the insctruction for the user, and the other has the instructions for creating the gradient mixer.
+- "Instruction Sets": Two .pdfs files, one is the instructions for the user, and the other has the instructions for creating the gradient mixer.
 
 - "PCB": Includes the .fzz file for editing the PCB design, and it also includes the export files of the pcb in three diferent formats (.pdf, .svg, Gerber Files). Depending on the company you are printing the PCB they will request for the type of file. The most common is the Gerber File. The file "KGGradient_Mixer_06072021.zip" has all the Gerber Files compressed into a zip folder, you can send this zip file to the production company, or create your own zip file with the provided Gerber files.
  
