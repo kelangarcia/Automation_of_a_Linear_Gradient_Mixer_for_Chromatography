@@ -1,6 +1,6 @@
 Three files are included:
 Two gradient mixer codes and a zip file with the needed libraries. 
 
-- "Needed_Libraries.zip": The zip file needs to be installed into your Arduino IDE (read the instruction set for more), once it is installed. You can upload one of the two Gradient Mixer code provided.
+- "Needed_Libraries.zip": The zip file needs to be installed into your Arduino IDE (read the instruction set for more). Once it is installed, You can upload one of the two Gradient Mixer code provided.
 - "Original Code/GradientMixer/GradientMixer.ino": Original Gradient Mixer Code.
 - "LCD Inverted Code/Gradient_Mixer/Gradient_Mixer.ino":  If you notice that when there is a press in the touch screen it detects the touch but in the inverted y-axis position, then upload the second code (LCD inverted  code)
