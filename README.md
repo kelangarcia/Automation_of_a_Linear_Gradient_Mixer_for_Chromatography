@@ -16,4 +16,4 @@ All the folders and files included are explained below:
 
 - "PCB": Includes the .fzz file for editing the PCB design, and it also includes the export files of the pcb in three diferent formats (.pdf, .svg, Gerber Files). Depending on the company you are printing the PCB with, they will request for the type of file. The most common is the Gerber File. The file "KGGradient_Mixer_06072021.zip" has all the Gerber Files compressed into a zip folder, you can send this zip file to the production company, or create your own zip file with the provided Gerber files.
  
-- "Extra": Extra material
+- "EXTRA": Extra material
