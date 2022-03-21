@@ -1,4 +1,3 @@
-f
 // Libraries needed for the Touch LCD and RF transmitter
 #include <UTFT.h>
 #include <URTouch.h>
@@ -52,12 +51,14 @@ char buffer [33];
 
 // Pins for Stop Buttons
 const int StopLED = 18;
-const int VCCbuttons = 19;
+const int ButtonsVcc = 19;
 const int StopButton = 20;
 const int PlayButton = 21;
 
 // variables will change:
 int buttonState = 0;         // variable for reading the pushbutton status
+
+unsigned long LastInterrupt; //Checking time passsed in ISR vector
 
 void setup() {
   /* Initial setup
@@ -100,8 +101,8 @@ void setup() {
   myGLCD.setBackColor(0, 0, 255);
 
     // StopButton PINS USED
-  pinMode(VCCbuttons, OUTPUT);
-  digitalWrite(VCCbuttons, HIGH);
+  pinMode(ButtonsVcc, OUTPUT);
+  digitalWrite(ButtonVcc, HIGH);
   pinMode(StopLED, OUTPUT);
   pinMode(StopButton,INPUT);
   pinMode(PlayButton, INPUT);
