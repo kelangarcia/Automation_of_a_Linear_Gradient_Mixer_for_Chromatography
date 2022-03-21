@@ -50,9 +50,10 @@ int once = 0;
 char buffer [33];
 
 // Pins for Stop Buttons
-const int StopLED = 19;
-const int StopButton = 21;
-const int PlayButton = 14;
+const int StopLED = 18;
+const int ButtonsVcc =19;
+const int StopButton = 20;
+const int PlayButton = 21;
 
 // variables will change:
 int buttonState = 0;         // variable for reading the pushbutton status
@@ -88,6 +89,8 @@ void setup() {
   myGLCD.setBackColor(0, 0, 255);
 
     // StopButton PINS USED
+  pinMode(ButtonsVcc, OUTPUT);
+  digitalWrite(ButtonsVcc, HIGH);
   pinMode(StopLED, OUTPUT);
   pinMode(StopButton,INPUT);
   pinMode(PlayButton, INPUT);
