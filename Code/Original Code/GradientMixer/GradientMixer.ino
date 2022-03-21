@@ -1,3 +1,4 @@
+f
 // Libraries needed for the Touch LCD and RF transmitter
 #include <UTFT.h>
 #include <URTouch.h>
@@ -800,28 +801,31 @@ void loop(){
 }
 
 void PauseProgram(){
-  if (currentPage == '5'){
-    int decider = 1;
-
-    //Pump off, The code depends on the RF outlet. Change this values depending on your RF outlet
-    pump = 0;
-    mySwitch.send("10000001000010000101111000000000");//Change Binary Code to your own binary code for turning the pump off
-    mySwitch.send("10000001000010000101111000000000");//Change Binary Code to your own binary code for turning the pump off
-    digitalWrite(StopLED, HIGH);
-    
-    //Wait until Play Button is pressed
-    while(decider == 1){
-      buttonState = digitalRead(PlayButton);
-      if (buttonState > 0.1){
-        decider = 0;
+  if(millis() - LastInterrupt > 10) {// we set a 10ms no-interrupts window  
+   
+    if (currentPage == '5'){
+      int decider = 1;
+  
+      pump = 0;
+      //You can delete the codeline below if you dont want to turn off the pump when the program is paused
+      mySwitch.send("10101110000010000101111000000000");//Change Binary Code to your own binary code for turning the pump off
+      digitalWrite(StopLED, HIGH);
+      
+      //Wait until Play Button is pressed
+      while(decider == 1){
+        buttonState = digitalRead(PlayButton);
+        if (buttonState > 0.1){
+          decider = 0;
+        }
       }
+      
+      //Turns Pump ON
+      pump = 1;
+      //You can delete the codeline below if you dont want to turn nf the pump when the program goes back to work
+      mySwitch.send("10100110000010000101111000000000");//Change Binary Code to your own binary code for turning the pump on
+      digitalWrite(StopLED, LOW);
     }
-    //Pump ON, The code depends on the RF outlet. Change this values depending on your RF outlet
-    //Turns Pump ON
-    pump = 1;
-    mySwitch.send("10001110000010000101111000000000");//Change Binary Code to your own binary code for turning the pump on
-    mySwitch.send("10001110000010000101111000000000");//Change Binary Code to your own binary code for turning the pump on
-    digitalWrite(StopLED, LOW);
+    LastInterrupt = millis();
   }
 }
 
