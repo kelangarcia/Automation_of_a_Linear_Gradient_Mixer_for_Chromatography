@@ -1,0 +1,1 @@
+Final Gradient Mixer without taking in consideration the delay of the solenoid valve
