@@ -1,5 +1,0 @@
-SpinWorks 4 peak list for:    D:\Users\Kelan\OneDrive - Jacobs University\Documents\3 Jacobs University\Thesis\Detlef Gabel\Projects\NMR\exp3\exp. 3 28.04.21\
-peak #   freq. (Hz)    freq. (ppm)    intensity  intensity(Absolute)
-
-   1     1124.771        2.8082         0.0402            7569
-   2     1133.164        2.8292         0.4658           87675
