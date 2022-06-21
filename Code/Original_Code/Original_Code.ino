@@ -54,6 +54,10 @@ char buffer [33];
 const char* antennaOn = "10100110000010000101111000000000";
 const char* antennaOff = "10101110000010000101111000000000";
 
+const int pulse_length = 718
+const int protocol = 2
+const int repeat_transmit = 2
+
 // Pins for Stop Buttons
 const int StopLED = 18;
 const int ButtonsVcc =19;
@@ -88,13 +92,13 @@ void setup() {
    */
    
   // Optional set pulse length.
-  mySwitch.setPulseLength(718);
+  mySwitch.setPulseLength(pulse_length);
   
   // Optional set protocol (default is 1, will work for most outlets)
-  mySwitch.setProtocol(2);
+  mySwitch.setProtocol(protocol);
 
   // Optional set number of transmission repetitions.
-  mySwitch.setRepeatTransmit(2);
+  mySwitch.setRepeatTransmit(repeat_transmit);
 
   //turning the valve off
   digitalWrite(VALVE, LOW);

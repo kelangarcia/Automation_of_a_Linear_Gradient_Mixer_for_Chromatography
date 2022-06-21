@@ -54,6 +54,10 @@ char buffer [33];
 const char* antennaOn = "10100110000010000101111000000000";
 const char* antennaOff = "10101110000010000101111000000000";
 
+const int pulse_length = 718
+const int protocol = 2
+const int repeat_transmit = 2
+
 // Pins for Stop Buttons
 const int StopLED = 18;
 const int ButtonsVcc =19;
@@ -80,14 +84,14 @@ void setup() {
   mySwitch.enableTransmit(Antenna);
 
   // Optional set pulse length.
-  mySwitch.setPulseLength(718);
+  mySwitch.setPulseLength(pulse_length);
   
   // Optional set protocol (default is 1, will work for most outlets)
-  mySwitch.setProtocol(2);
+  mySwitch.setProtocol(protocol);
 
   // Optional set number of transmission repetitions.
-  mySwitch.setRepeatTransmit(2);
-
+  mySwitch.setRepeatTransmit(repeat_transmit);
+  
   //turning the valve off
   digitalWrite(VALVE, LOW);
   //Change Binary Code to your own binary code for turning the pump off
@@ -376,7 +380,7 @@ void loop(){
                To Change time limit, change the inequality value for "time2 <= 360"
                meaning that 360 its the maximum allowed minutes time.
               */
-              if ((time1 > 0) && (time1 <= 10) && (time2 > time1) && (time2 <= 360) && (percentageB > percentageA) && (percentageB <= 100)){ // Checks if the inputs are correct
+              if ((time1 >= 0) && (time2 > time1) && (time2 <= 360) && (percentageA >= 1) && (percentageB > percentageA) && (percentageB <= 100)){ // Checks if the inputs are correct
                 myGLCD.clrScr();
                 EnterPage();
                 currentPage = '4';
@@ -620,9 +624,10 @@ void loop(){
         pump = 1;
         mySwitch.send(antennaOn);//Change Binary Code to your own binary code for turning the pump on
 
+        //Prints the current stage
         myGLCD.setColor(255, 255, 255); // Sets color to white
         myGLCD.print("Step: (0, t1] ", 35, 150); // Prints the string
-        
+
         timeA = percentageA * 60;
         timeB = 6000 - timeA;
 

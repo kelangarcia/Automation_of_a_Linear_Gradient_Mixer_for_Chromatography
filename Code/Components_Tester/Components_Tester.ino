@@ -17,6 +17,7 @@ int pump = 0;
 //transmitter codes
 const char* antennaOn = "10100110000010000101111000000000";
 const char* antennaOff = "10101110000010000101111000000000";
+unsigned long lastInterrupt;
 
 // variables will change:
 volatile int buttonState = 0;         // variable for reading the pushbutton status
@@ -67,6 +68,9 @@ void loop() {
 }
 
 void PauseProgram(){
+  if(millis() - lastInterrupt > 10) // we set a 10ms no-interrupts window
+    {    
+
       int decider = 1;
   
       pump = 0;
@@ -87,4 +91,7 @@ void PauseProgram(){
       //You can delete the codeline below if you dont want to turn nf the pump when the program goes back to work
       mySwitch.send(antennaOn);//Change Binary Code to your own binary code for turning the pump on
       digitalWrite(StopLED, LOW);
+
+      lastInterrupt = millis();
+    }
 }
