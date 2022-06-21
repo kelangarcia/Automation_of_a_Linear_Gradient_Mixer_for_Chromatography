@@ -390,7 +390,7 @@ void loop(){
                To Change time limit, change the inequality value for "time2 <= 360"
                meaning that 360 its the maximum allowed minutes time.
               */
-              if ((time1 >= 1) && (time2 <= 360) && (time2 > time1) && (percentageA >= 1) && (percentageB > percentageA) && (percentageB <= 100)){ // Checks if the inputs are correct
+              if ((time1 >= 0) && (time2 > time1) && (time2 <= 360) && (percentageA >= 1) && (percentageB > percentageA) && (percentageB <= 100)){ // Checks if the inputs are correct
                 myGLCD.clrScr();
                 EnterPage();
                 currentPage = '4';
