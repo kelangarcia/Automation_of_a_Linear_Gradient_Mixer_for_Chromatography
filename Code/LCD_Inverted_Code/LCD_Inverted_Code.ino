@@ -54,9 +54,9 @@ char buffer [33];
 const char* antennaOn = "10100110000010000101111000000000";
 const char* antennaOff = "10101110000010000101111000000000";
 
-const int pulse_length = 718
-const int protocol = 2
-const int repeat_transmit = 2
+const int pulse_length = 718;
+const int protocol = 2;
+const int repeat_transmit = 2;
 
 // Pins for Stop Buttons
 const int StopLED = 18;
@@ -637,31 +637,31 @@ void loop(){
         myGLCD.print(buffer,255, 150);
         myGLCD.print("/", 247, 150); // Prints the string
 
-            itoa (1,buffer,10);
-            myGLCD.setBackColor(0, 0, 0);
-            myGLCD.setColor(255, 255, 255);// Sets Black color
-            myGLCD.print(buffer,228, 150);
+        itoa (1,buffer,10);
+        myGLCD.setBackColor(0, 0, 0);
+        myGLCD.setColor(255, 255, 255);// Sets Black color
+        myGLCD.print(buffer,228, 150);
             
-            valve = 1;
-            myGLCD.setColor(255, 255, 0);// Sets Yellow color
-            myGLCD.fillRoundRect (35,70, 145, 130);// Draws filled rounded rectangle
-            myGLCD.setColor(0, 0, 0);// Sets Black color
-            myGLCD.fillRoundRect (175,70, 285, 130);
-            myGLCD.setBackColor(255, 255, 0);
-            itoa ((timeA - 15),buffer,10);
-            myGLCD.print(buffer,(75), 93);
-            digitalWrite(VALVE, HIGH);
-            delay(timeA - 15);
+        valve = 1;
+        myGLCD.setColor(255, 255, 0);// Sets Yellow color
+        myGLCD.fillRoundRect (35,70, 145, 130);// Draws filled rounded rectangle
+        myGLCD.setColor(0, 0, 0);// Sets Black color
+        myGLCD.fillRoundRect (175,70, 285, 130);
+        myGLCD.setBackColor(255, 255, 0);
+        itoa ((timeA - 15),buffer,10);
+        myGLCD.print(buffer,(75), 93);
+        digitalWrite(VALVE, HIGH);
+        delay(timeA - 15);
 
-            valve = 0;
-            myGLCD.setColor(255, 255, 0);
-            myGLCD.fillRoundRect (175,70, 285, 130);
-            myGLCD.setColor(0, 0, 0);// Sets Black color
-            myGLCD.fillRoundRect (35,70, 145, 130);// Draws filled rounded rectangle
-            itoa ((timeB + 5),buffer,10);
-            myGLCD.print(buffer,(210), 93);
-            digitalWrite(VALVE, LOW);
-            delay(timeB + 5);
+        valve = 0;
+        myGLCD.setColor(255, 255, 0);
+        myGLCD.fillRoundRect (175,70, 285, 130);
+        myGLCD.setColor(0, 0, 0);// Sets Black color
+        myGLCD.fillRoundRect (35,70, 145, 130);// Draws filled rounded rectangle
+        itoa ((timeB + 5),buffer,10);
+        myGLCD.print(buffer,(210), 93);
+        digitalWrite(VALVE, LOW);
+        delay(timeB + 5);
         
         for (int x = 1; x < n1; x++){//Step 1
       
@@ -698,7 +698,8 @@ void loop(){
         myGLCD.fillRoundRect (35,150, 200, 170);
         myGLCD.setColor(255, 255, 255); // Sets color to white
         myGLCD.print("DONE!", 35, 150); // Prints the string
-
+        
+        //Step 2
         myGLCD.setColor(255, 255, 255); // Sets color to white
         myGLCD.print("Step: (t1, t2] ", 35, 170); // Prints the string
 
@@ -710,7 +711,7 @@ void loop(){
         myGLCD.print(buffer,255, 170);
         myGLCD.print("/", 247, 170); // Prints the string
         
-        for (int x = 0; x <= n2; x++){
+        for (int x = 0; x <= n2; x++){//Step 2
 
             itoa (x,buffer,10);
             myGLCD.setBackColor(0, 0, 0);
