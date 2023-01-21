@@ -1,5 +1,4 @@
 # Automation-of-a-Linear-Gradient-Mixer-for-Chromatography
-
 This repository has all the files and documentation (3D Case, Code, Circuit Analysis, Circuit Simulations, Procedure, Schematics,Results etc.) that were used to create a machine that automates the process of mixing gradients for chromatography. A so called Gradient Mixer Machine.
 
 All the folders and files included are explained below:
@@ -19,3 +18,5 @@ All the folders and files included are explained below:
 - "EXTRA": Extra material
 
 - "Gradient Mixer Price": List of materials with their average price inthe market, giving how much does this gradient mixer construction cost.
+
+Date: 01.21.23
