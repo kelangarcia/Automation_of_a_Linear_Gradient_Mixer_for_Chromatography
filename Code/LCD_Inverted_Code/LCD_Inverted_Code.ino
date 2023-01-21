@@ -29,23 +29,26 @@ int RT1 = 0;
 int RT2 = 0;
 int RA = 0;
 int RB = 0;
+int RP = 0;
 
 
 char T1[4] = "";
 char A[4] = "";
 char T2[4] = "";
 char B[4] = "";
-
+char P[2] = "";
 
 int stCurrentLen1=0;
 int stCurrentLen2=0;
 int stCurrentLen3=0;
 int stCurrentLen4=0;
+int stCurrentLen5=0;
 
 int time1 = 0;
 int percentageA = 0;
 int time2 = 0;
 int percentageB = 0;
+int period = 0;
 int once = 0;
 char buffer [33];
 
@@ -175,6 +178,8 @@ void loop(){
           stCurrentLen3 = 0;
           B[0] = '\0';
           stCurrentLen4 = 0;
+          P[0] = '\0';
+          stCurrentLen5 = 0;
 
           // Drawing Main Menu Page
           myGLCD.clrScr();
@@ -196,6 +201,9 @@ void loop(){
             else if(RB == 1){
               updateStr('1',80,165,4);
             }
+            else if(RP == 1){
+              updateStr('1',80,200,5);
+            }
           }
           if((x >= 210) && (x <= 250)){//2
             waitForIt(210, 40, 250, 80);
@@ -211,6 +219,9 @@ void loop(){
             else if(RB == 1){
               updateStr('2',80,165,4);
             }
+            else if(RP == 1){
+              updateStr('2',80,200,5);
+            }
           }
           if((x >= 260) && (x <= 300)){//3
             waitForIt(260, 40, 300, 80);
@@ -225,6 +236,9 @@ void loop(){
             }
             else if(RB == 1){
               updateStr('3',80,165,4);
+            }
+            else if(RP == 1){
+              updateStr('3',80,200,5);
             }
           }
         }
@@ -243,6 +257,9 @@ void loop(){
             else if(RB == 1){
               updateStr('4',80,165,4);
             }
+            else if(RP == 1){
+              updateStr('4',80,200,5);
+            }
           }
           if((x >= 210) && (x <= 250)){//5
             waitForIt(210, 90, 250, 130);
@@ -258,6 +275,9 @@ void loop(){
             else if(RB == 1){
               updateStr('5',80,165,4);
             }
+            else if(RP == 1){
+              updateStr('5',80,200,5);
+            }
           }
           if((x >= 260) && (x <= 300)){//6
             waitForIt(260, 90, 300, 130);
@@ -272,6 +292,9 @@ void loop(){
             }
             else if(RB == 1){
               updateStr('6',80,165,4);
+            }
+            else if(RP == 1){
+              updateStr('6',80,200,5);
             }
           }
         }
@@ -290,6 +313,9 @@ void loop(){
             else if(RB == 1){
               updateStr('7',80,165,4);
             }
+            else if(RP == 1){
+              updateStr('7',80,200,5);
+            }
           }
           if((x >= 210) && (x <= 250)){//8
             waitForIt(210, 140, 250, 180);
@@ -305,6 +331,9 @@ void loop(){
             else if(RB == 1){
               updateStr('8',80,165,4);
             }
+            else if(RP == 1){
+              updateStr('8',80,200,5);
+            }
           }
           if((x >= 260) && (x <= 300)){//9
             waitForIt(260, 140, 300, 180);
@@ -319,6 +348,9 @@ void loop(){
             }
             else if(RB == 1){
               updateStr('9',80,165,4);
+            }
+            else if(RP == 1){
+              updateStr('9',80,200,5);
             }
           }
         }
@@ -348,6 +380,12 @@ void loop(){
               stCurrentLen4 = 0;
               myGLCD.setColor(0, 0, 0);
               myGLCD.fillRect(80, 165, 150, 195);
+            }
+            else if(RP == 1){
+              P[0] = '\0';
+              stCurrentLen5 = 0;
+              myGLCD.setColor(0, 0, 0);
+              myGLCD.fillRect(80, 200, 150, 235);
             } 
           }
           if((x >= 210) && (x <= 250)){//0
@@ -364,23 +402,27 @@ void loop(){
             else if(RB == 1){
               updateStr('0',80,165,4);
             }
+            else if(RP == 1){
+              updateStr('0',80,200,5);
+            }
           }
           if((x >= 260) && (x <= 300)){//->
             waitForIt(260, 190, 300, 230);
-            if ((stCurrentLen1 != 0) && (stCurrentLen2 != 0) && (stCurrentLen3 != 0) && (stCurrentLen4 != 0)){
+            if ((stCurrentLen1 != 0) && (stCurrentLen2 != 0) && (stCurrentLen3 != 0) && (stCurrentLen4 != 0 && (stCurrentLen5 != 0))){
               
               // Converting Strings to INT    
               time1 = convertarraytoint(T1,stCurrentLen1);
               percentageA = convertarraytoint(A,stCurrentLen2);
               time2 = convertarraytoint(T2,stCurrentLen3);
               percentageB = convertarraytoint(B,stCurrentLen4);
+              period = convertarraytoint(P,stCurrentLen5);
               
               /*
                You can change the restrictions in here (in the if statement)!!
                To Change time limit, change the inequality value for "time2 <= 360"
                meaning that 360 its the maximum allowed minutes time.
               */
-              if ((time1 >= 0) && (time2 > time1) && (time2 <= 360) && (percentageA >= 1) && (percentageB > percentageA) && (percentageB <= 100)){ // Checks if the inputs are correct
+              if ((time1 >= 0) && (time2 > time1) && (time2 <= 360) && (percentageA >= 1) && (percentageB > percentageA) && (percentageB <= 100)  && (period >= 1)  && (period <= 6)){ // Checks if the inputs are correct
                 myGLCD.clrScr();
                 EnterPage();
                 currentPage = '4';
@@ -455,6 +497,7 @@ void loop(){
             RA = 0;
             RT2 = 0;
             RB = 0;
+            RP = 0;
             values();
           }
           if((y >= 120) && (y <= 150)){
@@ -463,6 +506,7 @@ void loop(){
             RA = 1;
             RT2 = 0;
             RB = 0;
+            RP = 0;
             values();
           }
           if((y >= 85) && (y <= 115)){
@@ -471,6 +515,7 @@ void loop(){
             RA = 0;
             RT2 = 1;
             RB = 0;
+            RP = 0;
             values();
           }
           if((y >= 50) && (y <= 80)){
@@ -479,6 +524,16 @@ void loop(){
             RA = 0;
             RT2 = 0;
             RB = 1;
+            RP = 0;
+            values();
+          }
+          if((y >= 15) && (y <= 45)){
+            waitForIt(5, 195, 70, 225);
+            RT1= 0;
+            RA = 0;
+            RT2 = 0;
+            RB = 0;
+            RP = 1;
             values();
           }
         } 
@@ -582,6 +637,7 @@ void loop(){
           myGLCD.print(A, 80, 98);
           myGLCD.print(T2, 80, 133);
           myGLCD.print(B, 80, 165);
+          myGLCD.print(P, 80, 200);
 
           currentPage = '1';
         }
@@ -950,6 +1006,21 @@ void values(){
   myGLCD.drawRoundRect (5, 160, 70, 190);
   myGLCD.setFont(BigFont); // Sets font to big
   myGLCD.print("%T2", 10, 165);
+
+  // P
+  if (RP == 0) {
+    myGLCD.setBackColor(0, 0, 0);
+    myGLCD.setColor(0, 0, 0);
+  }
+  else if (RP == 1){
+    myGLCD.setColor(255, 0, 0);
+    myGLCD.setBackColor(255, 0, 0);
+  }
+  myGLCD.fillRoundRect (5, 195, 70, 225);
+  myGLCD.setColor(255, 255, 255);
+  myGLCD.drawRoundRect (5, 195, 70, 225);
+  myGLCD.setFont(BigFont); // Sets font to big
+  myGLCD.print("P", 10, 200);
 }
 
 void startPage(){
@@ -1012,6 +1083,7 @@ void startPage(){
   RA = 0;
   RT2 = 0;
   RB = 0;
+  RP = 0;
   values();
 }
 
@@ -1166,6 +1238,17 @@ void updateStr(int val, int x, int y, int decider){
         myGLCD.setBackColor(0, 0, 0);
         myGLCD.setColor(255, 255, 250);
         myGLCD.print(B, x, y);
+      }
+    }
+    if (decider == 5){
+      if (stCurrentLen5 < 1){
+        P[stCurrentLen5] = val;
+        P[stCurrentLen5+1] = '\0';
+    
+        stCurrentLen5++;
+        myGLCD.setBackColor(0, 0, 0);
+        myGLCD.setColor(255, 255, 250);
+        myGLCD.print(P, x, y);
       }
     }
 }
