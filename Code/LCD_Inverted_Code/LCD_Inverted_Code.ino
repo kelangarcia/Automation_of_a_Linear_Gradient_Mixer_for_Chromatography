@@ -37,7 +37,7 @@ char T1[4] = "";
 char A[4] = "";
 char T2[4] = "";
 char B[4] = "";
-char P[2] = "";
+char P[3] = "";
 
 int stCurrentLen1=0;
 int stCurrentLen2=0;
@@ -424,6 +424,11 @@ void loop(){
                meaning that 360 its the maximum allowed minutes time.
               */
               if ((time1 >= 0) && (time2 > time1) && (time2 <= 360) && (percentageA >= 1) && (percentageB > percentageA) && (percentageB <= 100)  && (period >= 1)  && (period <= 6)){ // Checks if the inputs are correct
+                myGLCD.clrScr();
+                EnterPage();
+                currentPage = '4';
+              }
+              else if ((time1 >= 0) && (time2 > time1) && (time2 <= 360) && (percentageA >= 1) && (percentageB > percentageA) && (percentageB <= 100)  && (period == 10)){
                 myGLCD.clrScr();
                 EnterPage();
                 currentPage = '4';
@@ -1242,7 +1247,7 @@ void updateStr(int val, int x, int y, int decider){
       }
     }
     if (decider == 5){
-      if (stCurrentLen5 < 1){
+      if (stCurrentLen5 < 2){
         P[stCurrentLen5] = val;
         P[stCurrentLen5+1] = '\0';
     
