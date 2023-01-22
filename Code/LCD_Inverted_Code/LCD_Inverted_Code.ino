@@ -666,14 +666,14 @@ void loop(){
         }     
       }
       if (once == 0){
-        /////////////////////////////////////////////
-               int n1,n2;
+        /////////////////////////////////////////////       
+        int n1,n2,setsperminute;
         int Bandwidth = time2 - time1;
-        n1 = time1 * 10;
-        
-        n2 = Bandwidth * 10;
+        setsperminute = 60 / period;
+        n1 = time1 * setsperminute;
+        n2 = Bandwidth * setsperminute;
         double delta = (double)(percentageB - percentageA) / n2;
-        double intantpercentageA; 
+        double instantpercentageA; 
         unsigned long int timeA = 0;
         unsigned long int timeB = 0;
     
@@ -685,8 +685,8 @@ void loop(){
         myGLCD.setColor(255, 255, 255); // Sets color to white
         myGLCD.print("Step: (0, t1] ", 35, 150); // Prints the string
 
-        timeA = percentageA * 60;
-        timeB = 6000 - timeA;
+        timeA = percentageA * period * 10;
+        timeB = (period * 1000) - timeA;
 
 
         myGLCD.print("Cycle:", 175, 150); // Prints the string
@@ -775,9 +775,9 @@ void loop(){
             myGLCD.setColor(255, 255, 255);// Sets Black color
             myGLCD.print(buffer,200, 170);
           
-            intantpercentageA = percentageA + delta * x;
-            timeA = (unsigned long int)floor((double) intantpercentageA * 60);
-            timeB = 6000 - timeA;
+            instantpercentageA = percentageA + delta * x;
+            timeA = (unsigned long int)floor((double) instantpercentageA * period * 10);
+            timeB = (period * 1000) - timeA;
     
             valve = 1;
             myGLCD.setColor(255, 255, 0);// Sets Yellow color
