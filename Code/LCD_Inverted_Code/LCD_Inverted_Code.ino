@@ -14,6 +14,7 @@ RCSwitch mySwitch = RCSwitch(); //RF Transmitter
 const int VALVE = 8;
 const int VCC = 9;
 const int Antenna = 10;
+const int Compensate_delay = 1;
 
 //Needed variables
 extern uint8_t SmallFont[];
@@ -704,20 +705,20 @@ void loop(){
         myGLCD.setColor(0, 0, 0);// Sets Black color
         myGLCD.fillRoundRect (175,70, 285, 130);
         myGLCD.setBackColor(255, 255, 0);
-        itoa ((timeA - 15),buffer,10);
+        itoa ((timeA - (15 * Compensate_delay) ),buffer,10);
         myGLCD.print(buffer,(75), 93);
         digitalWrite(VALVE, HIGH);
-        delay(timeA - 15);
+        delay(timeA - (15 * Compensate_delay));
 
         valve = 0;
         myGLCD.setColor(255, 255, 0);
         myGLCD.fillRoundRect (175,70, 285, 130);
         myGLCD.setColor(0, 0, 0);// Sets Black color
         myGLCD.fillRoundRect (35,70, 145, 130);// Draws filled rounded rectangle
-        itoa ((timeB + 5),buffer,10);
+        itoa ((timeB + (5 * Compensate_delay)),buffer,10);
         myGLCD.print(buffer,(210), 93);
         digitalWrite(VALVE, LOW);
-        delay(timeB + 5);
+        delay(timeB + (5 * Compensate_delay));
         
         for (int x = 1; x < n1; x++){//Step 1
       
@@ -732,20 +733,20 @@ void loop(){
             myGLCD.setColor(0, 0, 0);// Sets Black color
             myGLCD.fillRoundRect (175,70, 285, 130);
             myGLCD.setBackColor(255, 255, 0);
-            itoa ((timeA - 5),buffer,10);
+            itoa ((timeA - (5 * Compensate_delay)),buffer,10);
             myGLCD.print(buffer,(75), 93);
             digitalWrite(VALVE, HIGH);
-            delay(timeA - 5);
+            delay(timeA - (5 * Compensate_delay));
 
             valve = 0;
             myGLCD.setColor(255, 255, 0);
             myGLCD.fillRoundRect (175,70, 285, 130);
             myGLCD.setColor(0, 0, 0);// Sets Black color
             myGLCD.fillRoundRect (35,70, 145, 130);// Draws filled rounded rectangle
-            itoa ((timeB + 5),buffer,10);
+            itoa ((timeB + (5 * Compensate_delay)),buffer,10);
             myGLCD.print(buffer,(210), 93);
             digitalWrite(VALVE, LOW);
-            delay(timeB + 5);
+            delay(timeB + (5 * Compensate_delay));
            
         }
 
@@ -784,20 +785,20 @@ void loop(){
             myGLCD.setColor(0, 0, 0);// Sets Black color
             myGLCD.fillRoundRect (175,70, 285, 130);
             myGLCD.setBackColor(255, 255, 0);
-            itoa ((timeA - 5),buffer,10);
+            itoa ((timeA - (5 * Compensate_delay)),buffer,10);
             myGLCD.print(buffer,(75), 93);
             digitalWrite(VALVE, HIGH);
-            delay(timeA - 5);
+            delay(timeA - (5 * Compensate_delay));
             
             valve = 0;
             myGLCD.setColor(255, 255, 0);
             myGLCD.fillRoundRect (175,70, 285, 130);
             myGLCD.setColor(0, 0, 0);// Sets Black color
             myGLCD.fillRoundRect (35,70, 145, 130);// Draws filled rounded rectangle
-            itoa ((timeB + 5),buffer,10);
+            itoa ((timeB + (5 * Compensate_delay)),buffer,10);
             myGLCD.print(buffer,(210), 93);
             digitalWrite(VALVE, LOW);
-            delay(timeB + 5);
+            delay(timeB + (5 * Compensate_delay));
         }
 
         myGLCD.setBackColor(0, 0, 0);
